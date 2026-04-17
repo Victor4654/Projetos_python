@@ -106,6 +106,48 @@ def massa():
     voltar_ao_menu()
 
 
+def temperatura():
+
+    subtitulo("Conversor de temperatura")
+    print("celsius (C)")
+    print("Kelvin(K)")
+    print("Fahrenheit(F)")
+
+    valor1,valor2,valor = unidades_digitadas()
+    valor_convertido = 0
+
+    if valor1 == "c" and valor2 == "k":
+        valor_convertido = valor + 273
+        print(f"A temperatura : {valor} C para kelvin é {valor_convertido:.4f} K")
+    elif valor1 == "k" and valor2 == "c":
+        valor_convertido = valor - 273
+        print(f"A temperatura : {valor} K para celsius é {valor_convertido:.4f} C")
+    elif valor1 == "c" and valor2 == "f":
+        valor_convertido = ((9*valor)/5) + 32
+        print(f"A temperatura : {valor} C para fahrenheit é {valor_convertido:.4f} F")
+    elif valor1 == "f" and valor2 == "c":
+        valor_convertido = ((5*valor) - 160)/9
+        print(f"A temperatura : {valor} F para celsius é {valor_convertido:.4f} C")
+    elif valor1 == "k" and valor2 == "f":
+        valor_convertido = ((9*valor-2457)/5)+32
+        print(f"A temperatura : {valor} K para fahrenheit é {valor_convertido:.4f} F")
+    elif valor1 == "f" and valor2 == "k":
+        valor_convertido = (((5*valor)-160)/9)+273
+        print(f"A temperatura : {valor} F para kelvin é {valor_convertido:.4f} K")
+    else:
+        print("unidade digitada incorreta!")
+        voltar_ao_menu()
+
+    voltar_ao_menu()
+    
+
+
+        
+
+
+
+
+
     
 
     
@@ -130,7 +172,7 @@ def selecao():
         case 4:
             print("Tempo")
         case 5: 
-            print("Temperatura")
+            temperatura()
         case _:
             print("Opção inválida. Por favor, selecione uma opção válida.")
             voltar_ao_menu()
