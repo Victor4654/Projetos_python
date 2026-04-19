@@ -1,5 +1,4 @@
 import os
-import math
 
 
 def voltar_ao_menu():
@@ -141,8 +140,72 @@ def temperatura():
     voltar_ao_menu()
     
 
+def tempo():
+
+    subtitulo("Conversor de tempo")
+    print("Hora: h")
+    print("Minutos: m")
+    print("segundos: s")
+
+    tempo1,tempo2,valor = unidades_digitadas()
+
+    if tempo1 == "h" and tempo2 == "m":
+        print(f"{valor}H convertido para minutos é {valor*60}m")
+    elif tempo1 == "m" and tempo2 == "s":
+         print(f"{valor}M convertido para segundos é {valor*60}s")
+    elif tempo1 == "h" and tempo2 == "s":
+        print(f"{valor}h convertido para segundos é {valor*3600}s")
+
+    elif tempo1 == "s" and tempo2 == "m":
+        print(f"{valor}s convertido para minutos é {valor//60}m")
+    elif tempo1 == "m" and tempo2 == "h":
+        print(f"{valor}m convertido para horas é {valor//60}h")
+    elif tempo1 == "s" and tempo2 == "h":
+        print(f"{valor}s convertido para horas é {valor//3600}h")
+    else:
+        voltar_ao_menu()
+
+    voltar_ao_menu()
 
         
+
+def volume():
+
+    subtitulo("Conversor de volume")
+    print("Unidades de medida volume")
+    lista_volume = {
+
+        "km":1000**3,
+        "hm":1000**2,
+        "dam":1000**1,
+        "m": 1,
+        "dm":1000**-1,
+        "cm": 1000**-2,
+        "mm": 1000**-3
+
+    }
+
+    for dados in lista_volume.keys():
+        print(f"{dados}^3")
+
+    
+
+    volume1,volume2,valor = unidades_digitadas()
+
+    if volume1 in lista_volume and volume2 in lista_volume:
+        processo = valor * lista_volume[volume1]
+        conversao = processo / lista_volume[volume2]
+        print(f"{valor} {volume1} é igual a {conversao} {volume2}.")
+    else:
+
+        print("Unidade de medida inválida. Por favor, selecione unidades válidas.")
+        input("\nDigite uma tecla para voltar ao menu de seleção: ")
+        voltar_ao_menu()
+
+
+
+
+    voltar_ao_menu()
 
 
 
@@ -168,9 +231,9 @@ def selecao():
         case 2:
             massa()
         case 3:
-            print("Volume")
+            volume()
         case 4:
-            print("Tempo")
+            tempo()
         case 5: 
             temperatura()
         case _:
