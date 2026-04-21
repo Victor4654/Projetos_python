@@ -8,8 +8,8 @@ Repositório com pequenos projetos feitos em Python durante minha jornada de apr
 
 | Projeto | Descrição | Status |
 |---|---|---|
-| [Conversor de Unidades](./Conversor_de_unidades/) | Converte entre diferentes unidades de medida (comprimento, peso, temperatura, etc.) | ✅ Concluído |
-| [Jogo da Velha](./Jogo_da_velha/) | Jogo da velha para dois jogadores no terminal | 🚧 Em desenvolvimento |
+| [Conversor de Unidades](./conversor%20de%20unidades/) | Converte entre diferentes unidades de medida (comprimento, peso, temperatura, etc.) | ✅ Concluído |
+| [Jogo da Velha](./jogo%20da%20velha/) | Jogo da velha para dois jogadores no terminal | 🚧 Em desenvolvimento |
 
 ---
 
